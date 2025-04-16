@@ -2,6 +2,7 @@ import { View, Text, Pressable, StyleSheet } from "react-native";
 
 const PrimaryButton = ({ children, onPress }) => {
   // the props have a child property which can be accessed by : props.children, here we have destructured the same in the function itself
+  //some shit
   const onPressHandler = () => {
     console.log("im pressed");
     onPress();
@@ -18,6 +19,7 @@ const PrimaryButton = ({ children, onPress }) => {
         }
       >
         <Text style={styles.buttonText}>{children}</Text>
+
       </Pressable>
     </View>
   );
