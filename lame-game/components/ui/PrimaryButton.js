@@ -1,4 +1,5 @@
 import { View, Text, Pressable, StyleSheet } from "react-native";
+import Colors from "../../constants/colors";
 
 const PrimaryButton = ({ children, onPress }) => {
   // the props have a child property which can be accessed by : props.children, here we have destructured the same in the function itself
@@ -11,7 +12,7 @@ const PrimaryButton = ({ children, onPress }) => {
     <View style={styles.buttonOuterContainer}>
       <Pressable
         onPress={onPressHandler}
-        android_ripple={{ color: "#640233" }}
+        android_ripple={{ color: Colors.primary600 }}
         style={({ pressed }) =>
           pressed
             ? [styles.buttonInnerContainer, styles.pressed]
@@ -29,7 +30,7 @@ export default PrimaryButton;
 
 const styles = StyleSheet.create({
   buttonOuterContainer: {
-    backgroundColor: "#72063c",
+    backgroundColor: Colors.primary500,
     borderRadius: 28,
     margin: 4,
     elevation: 8,
