@@ -3,7 +3,6 @@ import Colors from "../../constants/colors";
 
 const PrimaryButton = ({ children, onPress }) => {
   // the props have a child property which can be accessed by : props.children, here we have destructured the same in the function itself
-  //some shit
   const onPressHandler = () => {
     console.log("im pressed");
     onPress();
@@ -45,6 +44,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
   },
   buttonText: {
+    fontFamily : 'open-sans-bold',
     textAlign: "center",
     color: "white",
   },

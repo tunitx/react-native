@@ -1,8 +1,11 @@
-import { TextInput, View, StyleSheet, Alert } from "react-native";
+import { TextInput, View, StyleSheet, Alert, Text } from "react-native";
 import { useState } from "react";
 import PrimaryButton from "../components/ui/PrimaryButton";
 import Colors from "../constants/colors";
-const GameStartScreen = ({screenHandler}) => {
+import Title from "../components/ui/Title";
+import Instruction from "../components/game/Instruction";
+import Card from "../components/ui/Card";
+const GameStartScreen = ({ screenHandler }) => {
   const [input, setInput] = useState("");
   const handleInput = (enteredInput) => {
     setInput(enteredInput);
@@ -25,8 +28,10 @@ const GameStartScreen = ({screenHandler}) => {
   };
 
   return (
-    <View style={styles.inputContainer}>
-      <View>
+    <View style={styles.rootContainer}>
+      <Title>Guess My Number</Title>
+      <Card>
+        <Instruction>Enter a Number</Instruction>
         <TextInput
           style={styles.numberInput}
           maxLength={2}
@@ -36,35 +41,26 @@ const GameStartScreen = ({screenHandler}) => {
           autoCorrect={false}
           onChangeText={handleInput}
         />
-      </View>
-      <View style={styles.buttonContainer}>
-        <View style={styles.button}>
-          <PrimaryButton onPress={resetInputHandler}>Reset</PrimaryButton>
+        <View style={styles.buttonContainer}>
+          <View style={styles.button}>
+            <PrimaryButton onPress={resetInputHandler}>Reset</PrimaryButton>
+          </View>
+          <View style={styles.button}>
+            <PrimaryButton onPress={confirmInputHandler}>Confirm</PrimaryButton>
+          </View>
         </View>
-        <View style={styles.button}>
-          <PrimaryButton onPress={confirmInputHandler}>Confirm</PrimaryButton>
-        </View>
-      </View>
+      </Card>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  inputContainer: {
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 16,
-    marginHorizontal: 24,
+  rootContainer: {
+    flex: 1,
     marginTop: 100,
-    borderRadius: 8,
-    backgroundColor: Colors.primary800,
-    elevation: 4, // shadow effect for android
-
-    shadowColor: "black", // shadow effect for IOS
-    shadowOffset: { width: 0, height: 4 },
-    shadowRadius: 6,
-    shadowOpacity: 0.5,
+    alignItems: "center",
   },
+
   buttonContainer: {
     flexDirection: "row",
   },

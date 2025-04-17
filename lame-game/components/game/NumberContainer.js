@@ -14,14 +14,15 @@ const styles = StyleSheet.create({
     container : {
         borderWidth : 4,
         borderColor : Colors.accent500,
-        padding : 24,
+        padding : 20,
         borderRadius : 8,
-        margin : 24,
+        marginTop : 28,
         alignItems : 'center',
         justifyContent : 'center'
     },
 
     numberText : {
+        fontFamily : 'open-sans-bold',
         color : Colors.accent500,
         fontSize : 36,
         fontWeight :'bold'
