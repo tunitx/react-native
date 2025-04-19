@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, Alert, FlatList} from "react-native";
+import { Text, View, StyleSheet, Alert, FlatList } from "react-native";
 import Title from "../components/ui/Title";
 import { useEffect, useReducer, useRef, useState } from "react";
 import NumberContainer from "../components/game/NumberContainer";
@@ -50,15 +50,14 @@ const GameScreen = ({ inputNumber, gameOverHandler }) => {
 
     let newRandomNum = generateRandom(minRef.current, maxRef.current, guess);
     setGuess(newRandomNum);
-    setRounds((prevRounds) => [newRandomNum,...prevRounds]);
+    setRounds((prevRounds) => [newRandomNum, ...prevRounds]);
   };
 
   return (
     <View style={styles.screen}>
       <Title>Opponent's Guess</Title>
-      <NumberContainer>{guess}</NumberContainer>
-
       <Card>
+        <NumberContainer>{guess}</NumberContainer>
         <Instruction style={styles.instructionStyle}>
           Higher or lower?
         </Instruction>
@@ -77,12 +76,21 @@ const GameScreen = ({ inputNumber, gameOverHandler }) => {
         </View>
       </Card>
 
-      <View  style = {styles.flatListContainer}>
+      <View style={styles.flatListContainer}>
         {/* {rounds.map((round)=> <Text key={round}>{round}</Text>)} */}
-        <FlatList data={rounds} renderItem={(itemData) => {
-          return <RoundLog roundNumber = {rounds.length - itemData.index} roundGuess = {itemData.item} />
-        }} keyExtractor={(item) => item} />
-
+        <FlatList
+          data={rounds}
+          showsVerticalScrollIndicator = {false}
+          renderItem={(itemData) => {
+            return (
+              <RoundLog
+                roundNumber={rounds.length - itemData.index}
+                roundGuess={itemData.item}
+              />
+            );
+          }}
+          keyExtractor={(item) => item}
+        />
       </View>
     </View>
   );
@@ -109,8 +117,8 @@ const styles = StyleSheet.create({
     margin: 10,
     paddingBottom: 10,
   },
-  flatListContainer : {
-    flex : 1,
-    marginTop : 10
-  }
+  flatListContainer: {
+    flex: 1,
+    marginTop: 10,
+  },
 });
