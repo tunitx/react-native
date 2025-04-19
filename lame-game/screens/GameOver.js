@@ -12,9 +12,7 @@ function GameOver({ number, count, startGameAgain }) {
       <Title>Game Over!</Title>
 
       <View style={styles.imageContainer}>
-        {!imageLoaded && (
-          <ActivityIndicator size="large" color={'white'} />
-        )}
+        {!imageLoaded && <ActivityIndicator size="large" color={"white"} />}
         <Image
           style={styles.image}
           source={require("../assets/images/success.png")}
@@ -27,7 +25,7 @@ function GameOver({ number, count, startGameAgain }) {
         guess the number <Text style={styles.highlight}>{number}.</Text>
       </Text>
 
-      <PrimaryButton onPress={startGameAgain}>Start Over!</PrimaryButton>
+      <PrimaryButton onPress={startGameAgain}>New Game</PrimaryButton>
     </View>
   );
 }
@@ -54,17 +52,17 @@ const styles = StyleSheet.create({
     height: "100%",
   },
   summaryText: {
-    fontFamily: "opens-sans-regular",
-    fontSize: 20,
-    fontWeight: "600",
+    fontFamily: "open-sans-regular",
+    fontSize: 24,
+    fontWeight: "650",
     color: Colors.primary800,
     textAlign: "center",
     marginBottom: 12,
-    paddingHorizontal: 23,
+    paddingHorizontal: 12,
   },
   highlight: {
     fontFamily: "open-sans-bold",
-    fontSize: 20,
-    color: Colors.primary800,
+    fontSize: 24,
+    color: Colors.primary500,
   },
 });

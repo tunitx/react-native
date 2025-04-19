@@ -11,6 +11,7 @@ import * as SplashScreen from "expo-splash-screen";
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
+
   const [loaded, error] = useFonts({
     "open-sans-bold": require("./fonts/OpenSans-Bold.ttf"),
     "open-sans-regular": require("./fonts/OpenSans-Regular.ttf"),
@@ -40,7 +41,7 @@ export default function App() {
     setInput();
     setCount();
   }
-  
+
   let currentScreen = <GameStartScreen screenHandler={screenHandler} />;
 
   if (input && GameOver)

@@ -1,20 +1,18 @@
-import Colors from "../../constants/colors"
-import { View, StyleSheet } from "react-native"
+import Colors from "../../constants/colors";
+import { View, StyleSheet } from "react-native";
 
-export default function Card ({children}) {
-    return(
-        <View style = {styles.inputContainer} >{children}</View>
-    )
+export default function Card({ children }) {
+  return <View style={styles.inputContainer}>{children}</View>;
 }
 
 const styles = StyleSheet.create({
-    inputContainer: {
+  inputContainer: {
     justifyContent: "center",
     alignItems: "center",
     padding: 16,
     marginHorizontal: 24,
     borderRadius: 8,
-    marginTop : 36,
+    marginTop: 22,
     backgroundColor: Colors.primary800,
     elevation: 4, // shadow effect for android
     shadowColor: "black", // shadow effect for IOS
@@ -22,5 +20,4 @@ const styles = StyleSheet.create({
     shadowRadius: 6,
     shadowOpacity: 0.5,
   },
-})
-
+});

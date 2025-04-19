@@ -5,6 +5,7 @@ import Colors from "../constants/colors";
 import Title from "../components/ui/Title";
 import Instruction from "../components/game/Instruction";
 import Card from "../components/ui/Card";
+
 const GameStartScreen = ({ screenHandler }) => {
   const [input, setInput] = useState("");
   const handleInput = (enteredInput) => {

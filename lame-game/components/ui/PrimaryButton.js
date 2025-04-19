@@ -19,7 +19,6 @@ const PrimaryButton = ({ children, onPress }) => {
         }
       >
         <Text style={styles.buttonText}>{children}</Text>
-
       </Pressable>
     </View>
   );
@@ -44,7 +43,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
   },
   buttonText: {
-    fontFamily : 'open-sans-bold',
+    fontFamily: "open-sans-bold",
     textAlign: "center",
     color: "white",
   },
